@@ -1,0 +1,169 @@
+.body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#landing h1 {
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-size: 5rem;
+}
+
+.disableScroll {
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.reveal-modal.open {
+  top: 10vh !important;
+  position: fixed;
+  overflow-y: auto;
+  height: 80vh;
+}
+
+.mapicon {
+  width: 70px;
+}
+
+#toptitle {
+  text-align: left;
+  text-transform: uppercase;
+}
+
+#toptitle h1 {
+  font-family: Roboto;
+}
+
+#dblogo {
+  height: 55px;
+  float: right;
+  margin-top: 9px;
+}
+
+.modal-bodytext {
+  max-width: 55vw;
+  margin: auto;
+  padding-bottom: 4rem;
+}
+
+#landing {
+  height: 100vh;
+  text-align: center;
+  padding-top: 25vh;
+}
+
+#closelanding {
+  margin-top: 35vh;
+  max-width: 12vw;
+}
+
+p.byline {
+  font-weight: 700;
+}
+
+.flex-video.formodal {
+  min-width: 35vw;
+  float: right;
+  margin-left: 1rem;
+  padding-bottom: 30vh;
+}
+
+.caption {
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+}
+
+#modalTitle {
+  text-align: center;
+}
+
+/*#landing h1 {
+  margin-top: 15%;
+}
+#landing img {
+  margin-top: 15%;
+}*/
+
+#storylist {
+	overflow: auto;
+	height: 90vh;
+  padding-bottom: 4rem;
+}
+
+.list-story {
+  /*padding-top: 3rem;*/
+  min-height: 32%;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+#worldmap {
+    height: 90vh;
+    margin: auto;
+}
+
+#top-div {
+  height: 7vh;
+}
+
+.story-title {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    left: 0;
+    bottom: 0;
+    padding: 2%;
+    width: 100%;
+}
+
+.story-title h2 {
+  font-size: 1.4em;
+}
+
+.story-title p {
+  margin-bottom: 0px;
+}
+
+.map {
+
+    position:relative;
+}
+
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+@media only screen and (max-width: 40em) { 
+  .flex-video.formodal {
+    float: none;
+  }
+
+  .list-story {
+    min-height: 40vh;
+  }
+
+  #landing h1 {
+    font-size: 3rem;
+  }
+
+  #dblogo {
+    height: 40px;
+    margin-top: 6px;
+  }
+
+  #closelanding {
+    margin-top: 24vh;
+  }
+}
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  #closelanding {
+    margin-top: 16vh;
+  }
+
+  #landing h1 {
+    font-size: 4rem;
+  }
+}
