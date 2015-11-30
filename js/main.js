@@ -52,6 +52,11 @@ $(document).ready(function() {
 	    })
 	});
 
+	// Get coordinate from click -- doesn't really work, gives you center of map
+	// map.on("click", function(evt) {
+	// 	console.log(map.getEventCoordinate(evt));
+	// });
+
 	// Compile handlebars templates
 	list_template_html = $("#list-template").html();
 	list_template = Handlebars.compile(list_template_html);
@@ -60,7 +65,7 @@ $(document).ready(function() {
 	var masterurl = "https://spreadsheets.google.com/feeds/list/" + sheetID + "/default/public/values?alt=json";
 	$.getJSON(masterurl, function(data) {
 		data = clean_google_sheet_json(data);
-		console.log(data);
+		// console.log(data);
 
 		$("#storylist").html(list_template({stories: data}));
 

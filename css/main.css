@@ -9,8 +9,13 @@
 }
 
 .disableScroll {
-	overflow-y: hidden;
-	overflow-x: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+h3.script {
+  font-family: 'Alex Brush', cursive;
+  font-size: 2rem;
 }
 
 .reveal-modal.open {
@@ -84,8 +89,8 @@ p.byline {
 }*/
 
 #storylist {
-	overflow: auto;
-	height: 90vh;
+  overflow: auto;
+  height: 90vh;
   padding-bottom: 4rem;
 }
 
