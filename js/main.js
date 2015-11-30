@@ -4,6 +4,7 @@ var data;
 var list_template_html;
 var list_template;
 var onlanding = 1;
+var map_showing = 0;
 var iconElement = [];
 var overlays = [];
 
@@ -37,6 +38,24 @@ var map;
 // 			});
 
 $(document).ready(function() {
+	// Landing page switcher
+	$("#closelanding").click(function() { hide_landing(); });
+
+	$("#landing").swipe({
+		swipeUp:function(event,direction,distance,duration) {
+			hide_landing();
+		},
+		swipeDown:function(event,direction,distance,duration) {
+			hide_landing();
+		}
+	})
+
+	$('#landing').on('DOMMouseScroll mousewheel swipedown', function ( event ) {
+	  console.log(event);
+	  if( event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
+	    hide_landing();
+	  }
+	});
 
 	// Initialize the map
 	map = new ol.Map({
@@ -56,6 +75,31 @@ $(document).ready(function() {
 	// map.on("click", function(evt) {
 	// 	console.log(map.getEventCoordinate(evt));
 	// });
+	
+	// Mobile map switcher
+	if (isSmall()) {
+		$("#mapswitch").html('<img id="mapicon" src="icon/iconmonstr-map-5-icon.svg">');
+		// $("#mapicon").fadeToggle(2000,"slow",)
+		
+		// Fix map view
+
+		map.setView(new ol.View({
+		    center: [6966165.009797823, 3532369.295191832],
+		    zoom: 1.2
+	    }));
+
+		$("#mapicon").click(function() {
+			if (map_showing) {
+				$("#storylist").show();
+				map_showing = 0;
+			} else {
+				console.log("hi");
+				$("#storylist").hide();
+				map_showing = 1;
+			}
+		})
+	}
+
 
 	// Compile handlebars templates
 	list_template_html = $("#list-template").html();
@@ -120,31 +164,15 @@ $(document).ready(function() {
 	});
 
 	
-	$("#closelanding").click(function() {
-		hide_landing();
-	});
-
-
-	$("#landing").swipe({
-		swipeUp:function(event,direction,distance,duration) {
-			hide_landing();
-		},
-		swipeDown:function(event,direction,distance,duration) {
-			hide_landing();
-		}
-	})
-
-	$('#landing').on('DOMMouseScroll mousewheel swipedown', function ( event ) {
-	  console.log(event);
-	  if( event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
-	    hide_landing();
-	  }
-	});
+	
 
 	$(document).foundation();
 });
 
-
+function isSmall() {
+  return matchMedia(Foundation.media_queries.small).matches &&
+    !matchMedia(Foundation.media_queries.medium).matches;
+}
 
 function hide_landing()
 {
