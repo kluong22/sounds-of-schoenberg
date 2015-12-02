@@ -16,6 +16,21 @@
   font-size: 0.8rem;
 }
 
+#headerbox {
+  background-color: rgba(255,255,255,0.6);
+  position: absolute;
+  width: 70vw;
+  padding: 1rem;
+  top: 20vh;
+  left: 15vw;
+}
+
+#description {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.2rem;
+  margin-top: 0.5rem;
+}
+
 .disableScroll {
   overflow-y: hidden;
   overflow-x: hidden;
@@ -73,8 +88,10 @@ h3.script {
 }
 
 #closelanding {
-  margin-top: 35vh;
-  max-width: 10vw;
+  width: 10vw;
+  position: absolute;
+  left: 45vw;
+  bottom: 10vh;
 }
 
 p.byline {
@@ -178,10 +195,6 @@ p.byline {
     margin-top: 6px;
   }
 
-  #closelanding {
-    margin-top: 24vh;
-  }
-
   .mapicon {
     width: 45px;
   }
@@ -189,13 +202,20 @@ p.byline {
   .modal-bodytext {
     max-width: None;
   }
+
+  #headerbox {
+    top: 14vh;
+    width: 95vw;
+    left: 2.5vw;
+  }
+
+  #closelanding {
+    width: 20vw;
+    left: 40vw;
+  }
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  #closelanding {
-    margin-top: 16vh;
-  }
-
   #landing h1 {
     font-size: 4rem;
   }
