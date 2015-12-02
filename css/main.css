@@ -8,6 +8,14 @@
     font-size: 5rem;
 }
 
+#landingcredit {
+  position: absolute;
+  bottom: 0;
+  margin-left: 1.45rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+}
+
 .disableScroll {
   overflow-y: hidden;
   overflow-x: hidden;
@@ -59,6 +67,9 @@ h3.script {
   height: 100vh;
   text-align: center;
   padding-top: 25vh;
+  background-image: url("http://dailybruin.com/images/2015/12/schoenberg-horiz-lt.jpg");
+  background-size: cover;
+  background-position: center center;
 }
 
 #closelanding {
@@ -156,6 +167,10 @@ p.byline {
 
   #landing h1 {
     font-size: 3rem;
+  }
+
+  #landing {
+    background-image: url("http://dailybruin.com/images/2015/12/schoenberg-vertical-lt.jpg");
   }
 
   #dblogo {

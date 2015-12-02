@@ -93,13 +93,17 @@ $(document).ready(function() {
 				$("#storylist").show();
 				map_showing = 0;
 			} else {
-				console.log("hi");
 				$("#storylist").hide();
 				map_showing = 1;
 			}
 		})
 	}
-
+	if (isMedium()) {
+		map.setView(new ol.View({
+		    center: [6966165.009797823, 3532369.295191832],
+		    zoom: 2
+	    }));
+	}
 
 	// Compile handlebars templates
 	list_template_html = $("#list-template").html();
@@ -172,6 +176,11 @@ $(document).ready(function() {
 function isSmall() {
   return matchMedia(Foundation.media_queries.small).matches &&
     !matchMedia(Foundation.media_queries.medium).matches;
+}
+
+function isMedium() {
+  return matchMedia(Foundation.media_queries.medium).matches &&
+    !matchMedia(Foundation.media_queries.large).matches;
 }
 
 function hide_landing()
