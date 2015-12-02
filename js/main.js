@@ -67,14 +67,16 @@ $(document).ready(function() {
 	    ],
 	    view: new ol.View({
 		    center: [6966165.009797823, 3532369.295191832],
-		    zoom: 2.8
+		    zoom: 2.8,
+		    minZoom: 2,
+		    maxZoom: 4
 	    })
 	});
 
 	// Get coordinate from click -- doesn't really work, gives you center of map
-	// map.on("click", function(evt) {
-	// 	console.log(map.getEventCoordinate(evt));
-	// });
+	map.on("click", function(evt) {
+	 	console.log(map.getEventCoordinate(evt));
+	 });
 	
 	// Mobile map switcher
 	if (isSmall()) {
@@ -84,8 +86,10 @@ $(document).ready(function() {
 		// Fix map view
 
 		map.setView(new ol.View({
-		    center: [6966165.009797823, 3532369.295191832],
-		    zoom: 1.2
+		    center: [6966165.009797823, 732369.295191832],
+		    zoom: 1.3,
+		    minZoom: 1,
+		    maxZoom: 3
 	    }));
 
 		$("#mapicon").click(function() {
