@@ -36,7 +36,11 @@
 	        {{#each stories}}
 		        <a id="modal-{{@index}}-a" href="#">
 			        <div class="list-story" id="list-story-{{@index}}" 
-			        		style="background: url({{featphoto}}) no-repeat center; background-size: cover">
+			        		{{#if yoffset}}
+			        			style="background: url({{featphoto}}) no-repeat center; background-size: cover; background-position-y: {{yoffset}}">
+			        		{{else}}
+			        			style="background: url({{featphoto}}) no-repeat center; background-size: cover">
+			        		{{/if}}
 			        	<div class="story-title">
 				        	<h2>{{headline}}</h2>
 				        	<p>{{byline}}</p>
@@ -47,7 +51,9 @@
 		        <div id="modal-{{@index}}" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 		        	<h2 id="modalTitle">{{headline}}</h2>
 				  	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
-				  	<img src="{{featphoto}}">
+				  	<div style="text-align: center">
+				  		<img class="modal-img" src="{{featphoto}}">
+				  	</div>
 				  	<p class="caption">{{featcaption}}</p>
 				  	
 				  	

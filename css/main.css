@@ -72,6 +72,10 @@ h3.script {
   margin-top: 9px;
 }
 
+.modal-img {
+  max-height: 80vh;
+}
+
 .modal-bodytext {
   max-width: 55vw;
   margin: auto;

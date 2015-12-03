@@ -74,9 +74,9 @@ $(document).ready(function() {
 	});
 
 	// Get coordinate from click -- doesn't really work, gives you center of map
-	map.on("click", function(evt) {
-	 	console.log(map.getEventCoordinate(evt));
-	 });
+	// map.on("click", function(evt) {
+	//  	console.log(map.getEventCoordinate(evt));
+	//  });
 	
 	// Mobile map switcher
 	if (isSmall()) {
